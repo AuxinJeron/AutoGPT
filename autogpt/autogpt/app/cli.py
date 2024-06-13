@@ -12,7 +12,7 @@ from .telemetry import setup_telemetry
 @click.group(invoke_without_command=True)
 @click.pass_context
 def cli(ctx: click.Context):
-    setup_telemetry()
+    # setup_telemetry()
 
     # Invoke `run` by default
     if ctx.invoked_subcommand is None:
