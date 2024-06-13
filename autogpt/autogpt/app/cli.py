@@ -4,7 +4,6 @@ from pathlib import Path
 from typing import Optional
 
 import click
-import sys
 from forge.logging.config import LogFormatName
 
 from .telemetry import setup_telemetry
@@ -163,31 +162,31 @@ def run(
     existing agent.
     """
     # Put imports inside function to avoid importing everything when starting the CLI
-    from autogpt.app.main import run_auto_gpt
+    return 
+    # from autogpt.app.main import run_auto_gpt
 
-    run_auto_gpt(
-        continuous=continuous,
-        continuous_limit=continuous_limit,
-        skip_reprompt=skip_reprompt,
-        speak=speak,
-        debug=debug,
-        log_level=log_level,
-        log_format=log_format,
-        log_file_format=log_file_format,
-        browser_name=browser_name,
-        allow_downloads=allow_downloads,
-        skip_news=skip_news,
-        workspace_directory=workspace_directory,
-        install_plugin_deps=install_plugin_deps,
-        override_ai_name=ai_name,
-        override_ai_role=ai_role,
-        resources=list(resource),
-        constraints=list(constraint),
-        best_practices=list(best_practice),
-        override_directives=override_directives,
-        task_prompt=task_prompt,
-    )
-    sys.exit(0)
+    # run_auto_gpt(
+    #     continuous=continuous,
+    #     continuous_limit=continuous_limit,
+    #     skip_reprompt=skip_reprompt,
+    #     speak=speak,
+    #     debug=debug,
+    #     log_level=log_level,
+    #     log_format=log_format,
+    #     log_file_format=log_file_format,
+    #     browser_name=browser_name,
+    #     allow_downloads=allow_downloads,
+    #     skip_news=skip_news,
+    #     workspace_directory=workspace_directory,
+    #     install_plugin_deps=install_plugin_deps,
+    #     override_ai_name=ai_name,
+    #     override_ai_role=ai_role,
+    #     resources=list(resource),
+    #     constraints=list(constraint),
+    #     best_practices=list(best_practice),
+    #     override_directives=override_directives,
+    #     task_prompt=task_prompt,
+    # )
 
 @cli.command()
 @click.option(
