@@ -331,22 +331,22 @@ async def run_auto_gpt(
     #################
     # Run the Agent #
     #################
-    # try:
-    #     await run_interaction_loop(agent)
-    # except AgentTerminated:
-    #     agent_id = agent.state.agent_id
-    #     logger.info(f"Saving state of {agent_id}...")
+    try:
+        await run_interaction_loop(agent)
+    except AgentTerminated:
+        agent_id = agent.state.agent_id
+        logger.info(f"Saving state of {agent_id}...")
 
-    #     # Allow user to Save As other ID
-    #     # save_as_id = clean_input(
-    #     #     f"Press enter to save as '{agent_id}',"
-    #     #     " or enter a different ID to save to:",
-    #     # )
-    #     save_as_id = agent_id
-    #     # TODO: allow many-to-one relations of agents and workspaces
-    #     await agent.file_manager.save_state(
-    #         save_as_id.strip() if not save_as_id.isspace() else None
-    #     )
+        # Allow user to Save As other ID
+        # save_as_id = clean_input(
+        #     f"Press enter to save as '{agent_id}',"
+        #     " or enter a different ID to save to:",
+        # )
+        save_as_id = agent_id
+        # TODO: allow many-to-one relations of agents and workspaces
+        await agent.file_manager.save_state(
+            save_as_id.strip() if not save_as_id.isspace() else None
+        )
 
 
 @coroutine

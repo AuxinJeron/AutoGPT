@@ -13,7 +13,7 @@ from .telemetry import setup_telemetry
 @click.pass_context
 def cli(ctx: click.Context):
     # setup_telemetry()
-
+    
     # Invoke `run` by default
     if ctx.invoked_subcommand is None:
         ctx.invoke(run)
@@ -162,31 +162,30 @@ def run(
     existing agent.
     """
     # Put imports inside function to avoid importing everything when starting the CLI
-    click.echo("Running the main program...") 
-    # from autogpt.app.main import run_auto_gpt
+    from autogpt.app.main import run_auto_gpt
 
-    # run_auto_gpt(
-    #     continuous=continuous,
-    #     continuous_limit=continuous_limit,
-    #     skip_reprompt=skip_reprompt,
-    #     speak=speak,
-    #     debug=debug,
-    #     log_level=log_level,
-    #     log_format=log_format,
-    #     log_file_format=log_file_format,
-    #     browser_name=browser_name,
-    #     allow_downloads=allow_downloads,
-    #     skip_news=skip_news,
-    #     workspace_directory=workspace_directory,
-    #     install_plugin_deps=install_plugin_deps,
-    #     override_ai_name=ai_name,
-    #     override_ai_role=ai_role,
-    #     resources=list(resource),
-    #     constraints=list(constraint),
-    #     best_practices=list(best_practice),
-    #     override_directives=override_directives,
-    #     task_prompt=task_prompt,
-    # )
+    run_auto_gpt(
+        continuous=continuous,
+        continuous_limit=continuous_limit,
+        skip_reprompt=skip_reprompt,
+        speak=speak,
+        debug=debug,
+        log_level=log_level,
+        log_format=log_format,
+        log_file_format=log_file_format,
+        browser_name=browser_name,
+        allow_downloads=allow_downloads,
+        skip_news=skip_news,
+        workspace_directory=workspace_directory,
+        install_plugin_deps=install_plugin_deps,
+        override_ai_name=ai_name,
+        override_ai_role=ai_role,
+        resources=list(resource),
+        constraints=list(constraint),
+        best_practices=list(best_practice),
+        override_directives=override_directives,
+        task_prompt=task_prompt,
+    )
 
 @cli.command()
 @click.option(
