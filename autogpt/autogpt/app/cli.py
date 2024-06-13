@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Optional
 
 import click
+import sys
 from forge.logging.config import LogFormatName
 
 from .telemetry import setup_telemetry
@@ -186,7 +187,7 @@ def run(
         override_directives=override_directives,
         task_prompt=task_prompt,
     )
-
+    sys.exit(0)
 
 @cli.command()
 @click.option(
