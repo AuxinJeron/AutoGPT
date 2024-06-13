@@ -1612,13 +1612,13 @@ websockets = ["websocket-client (>=1.3.0)"]
 
 [[package]]
 name = "duckduckgo-search"
-version = "5.3.1"
+version = "6.1.6"
 description = "Search for words, documents, images, news, maps and text translation using the DuckDuckGo.com search engine."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "duckduckgo_search-5.3.1-py3-none-any.whl", hash = "sha256:a07d94babe45c9a9bd0ce2dc185346b47fe95dab516d414f21f06a0a1200aca9"},
-    {file = "duckduckgo_search-5.3.1.tar.gz", hash = "sha256:2ee309e76b7e34ee84bddd5e046df723faecf7f999acdb499f3dad7e8a614c21"},
+    {file = "duckduckgo_search-6.1.6-py3-none-any.whl", hash = "sha256:6139ab17579e96ca7c5ed9398365245a36ecca8e7432545e3115ef90a9304eb7"},
+    {file = "duckduckgo_search-6.1.6.tar.gz", hash = "sha256:42c83d58f4f1d717a580b89cc86861cbae59e46e75288243776c53349d006bf1"},
 ]
 
 [package.dependencies]

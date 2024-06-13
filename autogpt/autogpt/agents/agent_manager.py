@@ -16,7 +16,8 @@ class AgentManager:
     def generate_id(agent_name: str) -> str:
         """Generate a unique ID for an agent given agent name."""
         unique_id = str(uuid.uuid4())[:8]
-        return f"{agent_name}-{unique_id}"
+        # return f"{agent_name}-{unique_id}"
+        return f"{agent_name}"
 
     def list_agents(self) -> list[str]:
         """Return all agent directories within storage."""

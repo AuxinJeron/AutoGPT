@@ -128,6 +128,13 @@ def cli(ctx: click.Context):
     ),
     type=click.Choice([i.value for i in LogFormatName]),
 )
+@click.option(
+    "--task-prompt",
+    help=(
+        "Provide the task prompt in the input."
+    ),
+    type=str,
+)
 def run(
     continuous: bool,
     continuous_limit: Optional[int],
@@ -148,6 +155,7 @@ def run(
     log_level: Optional[str],
     log_format: Optional[str],
     log_file_format: Optional[str],
+    task_prompt: Optional[str],
 ) -> None:
     """
     Sets up and runs an agent, based on the task specified by the user, or resumes an
@@ -176,6 +184,7 @@ def run(
         constraints=list(constraint),
         best_practices=list(best_practice),
         override_directives=override_directives,
+        task_prompt=task_prompt,
     )
 
 

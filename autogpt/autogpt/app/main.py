@@ -73,6 +73,7 @@ async def run_auto_gpt(
     constraints: Optional[list[str]] = None,
     best_practices: Optional[list[str]] = None,
     override_directives: bool = False,
+    task_prompt: Optional[str] = None,
 ):
     # Set up configuration
     config = ConfigBuilder.build_config_from_env()
@@ -249,7 +250,7 @@ async def run_auto_gpt(
     # Set up a new Agent #
     ######################
     if not agent:
-        task = ""
+        task = task_prompt if task_prompt else ""
         while task.strip() == "":
             task = clean_input(
                 "Enter the task that you want AutoGPT to execute,"
@@ -337,10 +338,11 @@ async def run_auto_gpt(
         logger.info(f"Saving state of {agent_id}...")
 
         # Allow user to Save As other ID
-        save_as_id = clean_input(
-            f"Press enter to save as '{agent_id}',"
-            " or enter a different ID to save to:",
-        )
+        # save_as_id = clean_input(
+        #     f"Press enter to save as '{agent_id}',"
+        #     " or enter a different ID to save to:",
+        # )
+        save_as_id = agent_id
         # TODO: allow many-to-one relations of agents and workspaces
         await agent.file_manager.save_state(
             save_as_id.strip() if not save_as_id.isspace() else None
