@@ -162,7 +162,7 @@ def run(
     existing agent.
     """
     # Put imports inside function to avoid importing everything when starting the CLI
-    return 
+    click.echo("Running the main program...") 
     # from autogpt.app.main import run_auto_gpt
 
     # run_auto_gpt(
